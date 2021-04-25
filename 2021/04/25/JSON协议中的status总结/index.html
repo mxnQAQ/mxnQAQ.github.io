@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":280,"display":"post","padding":18,"offset":10,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="title: JSON协议中的status总结 [size&#x3D;medium]一、状态码概况：[&#x2F;size] 0**：未被始化  1**：请求收到，继续处理  2**：操作成功收到，分析、接受  3**：完成此请求必须进一步处理  4**：请求包含一个错误语法或不能完成  5**：服务器执行一个完全有效请求失败  [size&#x3D;medium]二、信息[&#x2F;size] 100——客户必须继续发出请求(Con">
+  <meta name="description" content="[size&#x3D;medium]一、状态码概况：[&#x2F;size] 0**：未被始化  1**：请求收到，继续处理  2**：操作成功收到，分析、接受  3**：完成此请求必须进一步处理  4**：请求包含一个错误语法或不能完成  5**：服务器执行一个完全有效请求失败  [size&#x3D;medium]二、信息[&#x2F;size] 100——客户必须继续发出请求(Continue)  101——客户要求服务器根据请求">
 <meta property="og:type" content="article">
-<meta property="og:title" content="码小农QAQ">
+<meta property="og:title" content="JSON协议中的status总结">
 <meta property="og:url" content="http://example.com/2021/04/25/JSON%E5%8D%8F%E8%AE%AE%E4%B8%AD%E7%9A%84status%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="码小农QAQ">
-<meta property="og:description" content="title: JSON协议中的status总结 [size&#x3D;medium]一、状态码概况：[&#x2F;size] 0**：未被始化  1**：请求收到，继续处理  2**：操作成功收到，分析、接受  3**：完成此请求必须进一步处理  4**：请求包含一个错误语法或不能完成  5**：服务器执行一个完全有效请求失败  [size&#x3D;medium]二、信息[&#x2F;size] 100——客户必须继续发出请求(Con">
+<meta property="og:description" content="[size&#x3D;medium]一、状态码概况：[&#x2F;size] 0**：未被始化  1**：请求收到，继续处理  2**：操作成功收到，分析、接受  3**：完成此请求必须进一步处理  4**：请求包含一个错误语法或不能完成  5**：服务器执行一个完全有效请求失败  [size&#x3D;medium]二、信息[&#x2F;size] 100——客户必须继续发出请求(Continue)  101——客户要求服务器根据请求">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-25T05:46:16.740Z">
-<meta property="article:modified_time" content="2021-04-25T05:50:27.165Z">
+<meta property="article:modified_time" content="2021-04-25T06:03:08.125Z">
 <meta property="article:author" content="码小农QAQ">
 <meta name="twitter:card" content="summary">
 
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title> | 码小农QAQ</title>
+  <title>JSON协议中的status总结 | 码小农QAQ</title>
   
 
 
@@ -178,7 +178,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          JSON协议中的status总结
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-25 13:46:16 / 修改时间：13:50:27" itemprop="dateCreated datePublished" datetime="2021-04-25T13:46:16+08:00">2021-04-25</time>
+              <time title="创建时间：2021-04-25 13:46:16 / 修改时间：14:03:08" itemprop="dateCreated datePublished" datetime="2021-04-25T13:46:16+08:00">2021-04-25</time>
             </span>
 
           
@@ -210,8 +210,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>title: JSON协议中的status总结</p>
-<p>[size=medium]一、状态码概况：[/size]</p>
+        <p>[size=medium]一、状态码概况：[/size]</p>
 <pre><code>0**：未被始化
 
 1**：请求收到，继续处理
@@ -328,7 +327,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2021/04/25/JSON%E5%8D%8F%E8%AE%AE%E4%B8%AD%E7%9A%84status%E6%80%BB%E7%BB%93/" title="">http://example.com/2021/04/25/JSON协议中的status总结/</a>
+    <a href="http://example.com/2021/04/25/JSON%E5%8D%8F%E8%AE%AE%E4%B8%AD%E7%9A%84status%E6%80%BB%E7%BB%93/" title="JSON协议中的status总结">http://example.com/2021/04/25/JSON协议中的status总结/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
