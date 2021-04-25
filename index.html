@@ -162,6 +162,167 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/25/JSON%E5%8D%8F%E8%AE%AE%E4%B8%AD%E7%9A%84status%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="码小农QAQ">
+      <meta itemprop="description" content="码小农的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码小农QAQ">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/25/JSON%E5%8D%8F%E8%AE%AE%E4%B8%AD%E7%9A%84status%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-25 13:46:16 / 修改时间：13:50:27" itemprop="dateCreated datePublished" datetime="2021-04-25T13:46:16+08:00">2021-04-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>title: JSON协议中的status总结</p>
+<p>[size=medium]一、状态码概况：[/size]</p>
+<pre><code>0**：未被始化
+
+1**：请求收到，继续处理
+
+2**：操作成功收到，分析、接受
+
+3**：完成此请求必须进一步处理
+
+4**：请求包含一个错误语法或不能完成
+
+5**：服务器执行一个完全有效请求失败
+</code></pre>
+<p>[size=medium]二、信息[/size]</p>
+<pre><code>100——客户必须继续发出请求(Continue)
+
+101——客户要求服务器根据请求转换HTTP协议版本(Switching protocols)
+</code></pre>
+<p>[size=medium]三、成功[/size]</p>
+<pre><code>200——交易成功(OK)
+
+201——提示知道新文件的URL(Created)
+
+202——接受和处理、但处理未完成(Accepted)
+
+203——返回信息不确定或不完整(Non-Authoritative Information)
+
+204——请求收到，但返回信息为空(No Content)
+
+205——服务器完成了请求，用户代理必须复位当前已经浏览过的文件(Reset Content)
+
+206——服务器已经完成了部分用户的GET请求(Partial Content)
+</code></pre>
+<p>[size=medium]四、重定向[/size]</p>
+<pre><code>300——请求的资源可在多处得到(Multiple Choices)
+
+301——删除请求数据(Moved Permanently)
+
+302——在其他地址发现了请求数据(Found)
+
+303——建议客户访问其他URL或访问方式(See Other)
+
+304——客户端已经执行了GET，但文件未变化(Not Modified)
+
+305——请求的资源必须从服务器指定的地址得到(Use Proxy)
+
+306——前一版本HTTP中使用的代码，现行版本中不再使用
+
+307——申明请求的资源临时性删除(Temporary Redirect)
+</code></pre>
+<p>[size=medium]五、客户端错误[/size]</p>
+<pre><code>400——错误请求，如语法错误(Bad Request)
+
+401——请求授权失败(Unauthorized)
+
+402——保留有效ChargeTo头响应(Payment Required)
+
+403——请求不允许(由于服务器上文件或目录的权限设置导致资源不可用)(Forbidden)
+
+404——没有发现文件、查询或URl(没有找到指定的资源)(Not Found)
+
+405——用户在Request-Line字段定义的方法不允许(Method Not Allowed)
+
+406——根据用户发送的Accept拖，请求资源不可访问(Not Acceptable)
+
+407——类似401，用户必须首先在代理服务器上得到授权(Proxy Authentication Required)
+
+408——客户端没有在用户指定的饿时间内完成请求(Request Timeout)
+
+409——对当前资源状态，请求不能完成(Conflict)
+
+410——服务器上不再有此资源且无进一步的参考地址(Gone)
+
+411——服务器拒绝用户定义的Content-Length属性请求(Length Required)
+
+412——一个或多个请求头字段在当前请求中错误(Precondition Failed)
+
+413——请求的资源大于服务器允许的大小(Request Entity Too Large)
+
+414——请求的资源URL长于服务器允许的长度(Request-URI Too Long)
+
+415——请求资源不支持请求项目格式(Unsupported Media Type)
+
+416——请求中包含Range请求头字段，在当前请求资源范围内没有range指示值，请求也不包含If-Range请求头字段(Requested Range Not Suitable)
+
+417——服务器不满足请求Expect头字段指定的期望值，如果是代理服务器，可能是下一级服务器不能满足请求(Expectation Failed)
+</code></pre>
+<p>[size=medium]六、服务端错误[/size]</p>
+<pre><code>500——服务器产生内部错误(Internal Server Error)
+
+501——服务器不支持请求的函数(Not Implemented)
+
+502——服务器暂时不可用，有时是为了防止发生系统过载(Bad Gateway)
+
+503——服务器过载或暂停维修(Service Unavailable)
+
+504——关口过载，服务器使用另一个关口或服务来响应用户，等待时间设定值较长(Gateway Timeout)
+
+505——服务器不支持或拒绝支请求头中指定的HTTP版本(HTTP Version Not Supported )
+</code></pre>
+<p>[size=medium]七、除以上的其他[/size]</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">6</span>** <span class="number">7</span>** <span class="number">8</span>** <span class="number">9</span>** 等可以自己根据需求自定义</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/12/MySQL%20DATE_FORMAT()%20%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -488,7 +649,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
