@@ -13,10 +13,10 @@
 <p>有的话表示编译器与lombok版本不匹配，可以选择更换编译器或者更换lombok版本</p>
 ]]></content>
       <categories>
-        <category>IDEA</category>
+        <category>idea</category>
       </categories>
       <tags>
-        <tag>IDEA</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -25,10 +25,10 @@
     <content><![CDATA[<p>File→Settings→Editor→General→Auto Import→Optimize imports on the fly</p>
 ]]></content>
       <categories>
-        <category>IDEA</category>
+        <category>idea</category>
       </categories>
       <tags>
-        <tag>IDEA</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
