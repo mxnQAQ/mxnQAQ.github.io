@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>IDEA 报Error java 找不到符号 符号变量log 位置</title>
-    <url>/2021/05/19/Lombok/</url>
-    <content><![CDATA[<p>原因：使用@Slf4j或者@Log4j2注解方式记录日志。但是使用注解方式，就要往该项目中引入lombok插件，所以可能是lombok插件出错</p>
-<p>介绍两种较少见的情况</p>
-<p>一、</p>
-<p>点击setting → Build，Execution，Deployment  → Annotation Processors打开编辑页面，勾选Enable annotation processing，Apply保存后重启IDEA</p>
-<p>二、查看警告信息是否有如下（不要只看错误信息）</p>
-<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line"><span class="symbol">ava:</span> You aren<span class="comment">&#x27;t using a compiler supported by lombok, so lombok will not work and has been disabled.</span></span><br><span class="line">Your processor <span class="built_in">is</span>: com.sun.proxy.$Proxy24</span><br><span class="line">Lombok supports: sun/apple javac <span class="number">1.6</span>, ECJ</span><br></pre></td></tr></table></figure>
+    <title>BigDecimal和数字类型转换</title>
+    <url>/2021/06/01/BigDecimal%E5%92%8C%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h1 id="BigDecimal"><a href="#BigDecimal" class="headerlink" title="BigDecimal"></a>BigDecimal</h1><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">四则运算</span><br><span class="line">BigDecimal b1 = <span class="keyword">new</span> <span class="constructor">BigDecimal(Double.<span class="params">toString</span>(<span class="params">v1</span>)</span>);  </span><br><span class="line">BigDecimal b2 = <span class="keyword">new</span> <span class="constructor">BigDecimal(Double.<span class="params">toString</span>(<span class="params">v2</span>)</span>);  </span><br><span class="line">BigDecimal b3 = b1.add(b2);<span class="comment">//b1+b2</span></span><br><span class="line">BigDecimal b3 = b1.subtract(b2);<span class="comment">//b1-b2</span></span><br><span class="line">BigDecimal b3 = b1.multiply(b2);<span class="comment">//b1*b2</span></span><br><span class="line">BigDecimal b3 = b1.divide(b2,scale,BigDecimal.ROUND_HALF_UP);<span class="comment">//b1/b2,精确到小数点后scale位,其余的四舍五入</span></span><br><span class="line">比较大小</span><br><span class="line"><span class="built_in">int</span> num = b1.compare<span class="constructor">To(<span class="params">b2</span>)</span>;<span class="comment">//num为负,b1&lt;b2、num为0,b1==b2、num为正,b1&gt;b2</span></span><br><span class="line">Int num=a.compare<span class="constructor">To(Integer <span class="params">anotherInteger</span>)</span>;</span><br><span class="line">Int num=a.compare<span class="constructor">To(BigDecimal <span class="params">anotherBigDecimal</span>)</span>;</span><br><span class="line">BigDecimal取其中最大、最小值、绝对值、相反数</span><br><span class="line">BigDecimal c = a.max (b) <span class="comment">//比较取最大值</span></span><br><span class="line">BigDecimal c = a.min(b) <span class="comment">//比较取最小值</span></span><br><span class="line">BigDecimal c = a.abs<span class="literal">()</span><span class="comment">//取最绝对值</span></span><br><span class="line">BigDecimal c = a.negate<span class="literal">()</span><span class="comment">//取相反数</span></span><br></pre></td></tr></table></figure>
 
-<p>有的话表示编译器与lombok版本不匹配，可以选择更换编译器或者更换lombok版本</p>
+<h1 id="数字类型转换"><a href="#数字类型转换" class="headerlink" title="数字类型转换"></a>数字类型转换</h1><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Integer a=<span class="keyword">new</span> <span class="constructor">Integer(<span class="params">int</span> <span class="params">value</span>)</span>; <span class="comment">//定义中将int型转换为Integer型</span></span><br><span class="line">Integer a=<span class="keyword">new</span> <span class="constructor">Integer(String <span class="params">value</span>)</span>;<span class="comment">//定义中将String型的转换为Integer型</span></span><br><span class="line">BigDecimal a=<span class="keyword">new</span> <span class="constructor">BigDecimal(String; <span class="params">val</span>)</span><span class="comment">//定义中将String型转换为Integer型</span></span><br><span class="line">BigDecimal a=<span class="keyword">new</span> <span class="constructor">BigDecimal(<span class="params">double</span> <span class="params">val</span>)</span>;<span class="comment">//定义中将double型转换为Integer型</span></span><br><span class="line">Integer a=<span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span>value<span class="constructor">Of(<span class="string">&quot;7&quot;</span>)</span>;<span class="comment">//String类型转换为BigDecimal型</span></span><br><span class="line">Integer a=<span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span>get<span class="constructor">Integer(<span class="string">&quot;7&quot;</span>)</span>;<span class="comment">//String类型转换为BigDecimal型</span></span><br><span class="line"><span class="built_in">int</span> b=<span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span>parse<span class="constructor">Int(<span class="string">&quot;7&quot;</span>)</span>;<span class="comment">//String类型转换为int型</span></span><br><span class="line"><span class="built_in">int</span> b=a.<span class="built_in">int</span><span class="constructor">Value()</span>;<span class="comment">//Integer类型转换为int型</span></span><br><span class="line"><span class="built_in">float</span> b=a.<span class="built_in">float</span><span class="constructor">Value()</span>;<span class="comment">//Integer类型转换为float型</span></span><br><span class="line">double b=a.double<span class="constructor">Value()</span>;<span class="comment">//Integer类型转换为double型</span></span><br><span class="line">long b=a.long<span class="constructor">Value()</span>;<span class="comment">//Integer类型转换为long型</span></span><br><span class="line">BigDecimal temp = <span class="keyword">new</span> <span class="constructor">BigDecimal(<span class="params">a</span>)</span>;<span class="comment">//Integer类型转换为BigDecimal类型</span></span><br><span class="line">其它类型转换为<span class="constructor">String(以Integer为例)</span></span><br><span class="line">String str=a.<span class="keyword">to</span><span class="constructor">String()</span>;</span><br><span class="line">String str=<span class="module-access"><span class="module"><span class="identifier">String</span>.</span></span>value<span class="constructor">Of(<span class="params">a</span>)</span>;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>idea</category>
+        <category>函数</category>
       </categories>
       <tags>
-        <tag>idea</tag>
+        <tag>函数</tag>
       </tags>
   </entry>
   <entry>
@@ -136,6 +132,34 @@
 </code></pre>
 <p>[size=medium]七、除以上的其他[/size]</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">6</span>** <span class="number">7</span>** <span class="number">8</span>** <span class="number">9</span>** 等可以自己根据需求自定义</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>IDEA 报Error java 找不到符号 符号变量log 位置</title>
+    <url>/2021/05/19/Lombok/</url>
+    <content><![CDATA[<p>原因：使用@Slf4j或者@Log4j2注解方式记录日志。但是使用注解方式，就要往该项目中引入lombok插件，所以可能是lombok插件出错</p>
+<p>介绍两种较少见的情况</p>
+<p>一、</p>
+<p>点击setting → Build，Execution，Deployment  → Annotation Processors打开编辑页面，勾选Enable annotation processing，Apply保存后重启IDEA</p>
+<p>二、查看警告信息是否有如下（不要只看错误信息）</p>
+<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line"><span class="symbol">ava:</span> You aren<span class="comment">&#x27;t using a compiler supported by lombok, so lombok will not work and has been disabled.</span></span><br><span class="line">Your processor <span class="built_in">is</span>: com.sun.proxy.$Proxy24</span><br><span class="line">Lombok supports: sun/apple javac <span class="number">1.6</span>, ECJ</span><br></pre></td></tr></table></figure>
+
+<p>有的话表示编译器与lombok版本不匹配，可以选择更换编译器或者更换lombok版本</p>
+]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客编写规则</title>
+    <url>/2021/04/10/hello-world/</url>
+    <content><![CDATA[<p>title: Hello World<br>date: 2017-03-11 23:54:11<br>tags: [Hello,测试]<br>categories: 测试</p>
+<p>“&lt; !– more –&gt;”阅读全文</p>
+<p>top: 2  置顶功能数字越大，优先级越高</p>
+<p><img src="/2021/04/10/hello-world/alipay.png" alt="测试4"> 添加图片</p>
 ]]></content>
   </entry>
   <entry>
@@ -283,14 +307,5 @@
         <tag>函数</tag>
         <tag>MySQL</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>博客编写规则</title>
-    <url>/2021/04/10/hello-world/</url>
-    <content><![CDATA[<p>title: Hello World<br>date: 2017-03-11 23:54:11<br>tags: [Hello,测试]<br>categories: 测试</p>
-<p>“&lt; !– more –&gt;”阅读全文</p>
-<p>top: 2  置顶功能数字越大，优先级越高</p>
-<p><img src="/2021/04/10/hello-world/alipay.png" alt="测试4"> 添加图片</p>
-]]></content>
   </entry>
 </search>
